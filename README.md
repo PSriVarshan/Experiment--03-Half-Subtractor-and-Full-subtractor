@@ -27,28 +27,72 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 ## Procedure
 
+Connect the supply (+5V) to the circuit.
 
+Switch ON the main switch.
 
-Write the detailed procedure here 
-
+If the output is 1, then the led glows.
 
 ## Program:
-/*
+```
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
 
+Developed by: P Sri Varshan
+
+RegisterNumber:  22008051
+
+Half Subtractor 
+
+module exphalfsub(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+assign Diff=(A^B);
+assign Borrow=(~A&B);
+endmodule
+
+Full Subtractor
+
+module fullsub(A,B,C,diff,borrow);
+input A,B,C;
+output diff,borrow;
+assign borrow = (~A&(B^C)|(B&C));
+assign diff = (A^B^C);
+endmodule
+
+```
 ## Output:
 
 ## Truthtable
 
+Truth Table for Half Subtractor
+
+![halfsubtruthtable](https://user-images.githubusercontent.com/114944059/210628326-0ce7ca46-1a03-41c3-89f1-2c40a9311ca4.png)
+
+Truth Table for Full Subtractor
+
+![fullsubtruthttable](https://user-images.githubusercontent.com/114944059/210630312-9ce2f5c2-8df7-4f01-a10e-9ab9bc4c85bd.jpg)
 
 
 ##  RTL realization
 
+RTL Realiztion for Half Subtractor
+
+![halfsub](https://user-images.githubusercontent.com/114944059/210630565-8cb15d56-5e2b-4526-bb0e-377f0c9ab699.jpg)
+
+RTL Realization for Full Subtractor
+
+![fullsub](https://user-images.githubusercontent.com/114944059/210630659-f260c8b8-2e9b-4250-8b1c-5d5a6cde191c.jpg)
 
 ## Timing diagram 
+
+Timing Diagram for Half Subtractor
+
+![timinghs](https://user-images.githubusercontent.com/114944059/210630917-6f3d67b7-4dfa-42e2-9ae3-916040bbf8f8.jpg)
+
+Timing Diagram for Full Subtractor
+
+![timingfs](https://user-images.githubusercontent.com/114944059/210631052-b992715c-34a2-45df-bbb4-7863d3d8e8fa.jpg)
+
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
